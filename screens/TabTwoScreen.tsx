@@ -1,6 +1,6 @@
+import React from 'react';
 import { StyleSheet, Image, ImageBackground } from 'react-native';
 import {useTailwind} from 'tailwind-rn';
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
 export default function TabTwoScreen() {

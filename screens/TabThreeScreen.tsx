@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useEffect } from 'react';
 import { StyleSheet, SectionList, Alert, Pressable, Modal, TextInput } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
@@ -40,18 +41,18 @@ export default function TabThreeScreen() {
           <FontAwesome.Button name="eye" style={tailwind('bg-yellow-300')} onPress={() => handlerWatch(item)} iconStyle={{marginRight: 0}} size={40}/>
         </View>
         <View style={tailwind('mr-2')}>
-        <FontAwesome.Button name="edit" style={tailwind('bg-sky-600')} onPress={() => handlerEdit(item)} iconStyle={{marginRight: 0}} size={40}/>
+          <FontAwesome.Button name="edit" style={tailwind('bg-sky-600')} onPress={() => handlerEdit(item)} iconStyle={{marginRight: 0}} size={40}/>
         </View>
         <View style={tailwind('mr-2')}>
-        <FontAwesome.Button name="trash" style={tailwind('bg-rose-600')} onPress={() => showConfirmDialog(section.title, item)} iconStyle={{marginRight: 0}} size={40}/>
+          <FontAwesome.Button name="trash" style={tailwind('bg-rose-600')} onPress={() => showConfirmDialog(section.title, item)} iconStyle={{marginRight: 0}} size={40}/>
         </View>
         </View>
       // 
     );
   };
 
-  const handlerDelete = (title: String, item: String) => {
-    const listName2 = names.map((names: any) => {
+  const handlerDelete = (title: any, item: any) => {
+    const listName2:any = names.map((names: any) => {
       if(names.title === title){
         let namesActualizados = {title: names.title, data:[]};
         namesActualizados.data = names.data.filter((name: any)=>{
@@ -67,12 +68,12 @@ export default function TabThreeScreen() {
     Alert.alert('Contact Remove');
     setNames(listName2);    
   }
-  const handlerEdit = (item: String) => {
+  const handlerEdit = (item: any) => {
     setNameEdit(item);
     onChangeName();
     setModalEditVisible(true);
   }  
-  const handlerWatch = (item: String) => {
+  const handlerWatch = (item: any) => {
     setName(item);
     setModalVisible(true);
   }
@@ -99,7 +100,7 @@ export default function TabThreeScreen() {
   };
 
   const onChangeName = () => {
-    const x = [
+    const x:any = [
       {title: 'A', data: ['Amaya', 'Anabel', 'Alberto']},
       {title: 'B', data: ['Bartolo', 'Bryan', 'Braulio']},
       {title: 'C', data: ['Carlos', 'Camila', 'Cosme']},
