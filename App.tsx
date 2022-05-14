@@ -7,20 +7,23 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
+  useQuery,
+  gql
 } from "@apollo/client";
 
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
 
-export const client = new ApolloClient({
+const client = new ApolloClient({
   uri: "https://rickandmortyapi.com/graphql",
   cache: new InMemoryCache()
 });
 
 export default function App() {
+
   const isLoadingComplete = useCachedResources();
-  const colorScheme = useColorScheme();
+  const colorScheme = useColorScheme(); 
 
   if (!isLoadingComplete) {
     return null;
