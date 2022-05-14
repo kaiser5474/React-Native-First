@@ -29,14 +29,14 @@
 			"marginTop": 4
 		}
 	},
-	"mt-auto": {
+	"mb-2": {
 		"style": {
-			"marginTop": "auto"
+			"marginBottom": 8
 		}
 	},
-	"inline-block": {
+	"mr-1": {
 		"style": {
-			"display": "inline-block"
+			"marginRight": 4
 		}
 	},
 	"flex": {
@@ -44,34 +44,34 @@
 			"display": "flex"
 		}
 	},
-	"h-4": {
+	"h-[4.5em]": {
 		"style": {
-			"height": 16
+			"height": "4.5em"
 		}
 	},
-	"h-8": {
+	"h-[7em]": {
 		"style": {
-			"height": 32
+			"height": "7em"
 		}
 	},
-	"w-2": {
+	"h-[10em]": {
 		"style": {
-			"width": 8
+			"height": "10em"
 		}
 	},
-	"w-10": {
+	"h-[11em]": {
 		"style": {
-			"width": 40
+			"height": "11em"
 		}
 	},
-	"w-14": {
+	"h-[12em]": {
 		"style": {
-			"width": 56
+			"height": "12em"
 		}
 	},
-	"w-20": {
+	"h-full": {
 		"style": {
-			"width": 80
+			"height": "100%"
 		}
 	},
 	"w-24": {
@@ -79,19 +79,9 @@
 			"width": 96
 		}
 	},
-	"max-w-md": {
+	"w-[4.5em]": {
 		"style": {
-			"maxWidth": 448
-		}
-	},
-	"max-w-sm": {
-		"style": {
-			"maxWidth": 384
-		}
-	},
-	"max-w-xs": {
-		"style": {
-			"maxWidth": 320
+			"width": "4.5em"
 		}
 	},
 	"flex-1": {
@@ -106,17 +96,14 @@
 			"flexDirection": "row"
 		}
 	},
-	"content-start": {
+	"content-center": {
 		"style": {
-			"alignContent": "flex-start"
+			"alignContent": "center"
 		}
 	},
-	"rounded-md": {
+	"justify-center": {
 		"style": {
-			"borderTopLeftRadius": 6,
-			"borderTopRightRadius": 6,
-			"borderBottomRightRadius": 6,
-			"borderBottomLeftRadius": 6
+			"justifyContent": "center"
 		}
 	},
 	"rounded-xl": {
@@ -125,6 +112,14 @@
 			"borderTopRightRadius": 12,
 			"borderBottomRightRadius": 12,
 			"borderBottomLeftRadius": 12
+		}
+	},
+	"rounded-full": {
+		"style": {
+			"borderTopLeftRadius": 9999,
+			"borderTopRightRadius": 9999,
+			"borderBottomRightRadius": 9999,
+			"borderBottomLeftRadius": 9999
 		}
 	},
 	"border-4": {
@@ -232,6 +227,11 @@
 			"lineHeight": 28
 		}
 	},
+	"text-[54px]": {
+		"style": {
+			"fontSize": 54
+		}
+	},
 	"font-bold": {
 		"style": {
 			"fontWeight": "700"
@@ -240,6 +240,11 @@
 	"font-semibold": {
 		"style": {
 			"fontWeight": "600"
+		}
+	},
+	"font-black": {
+		"style": {
+			"fontWeight": "900"
 		}
 	},
 	"leading-[0rem]": {

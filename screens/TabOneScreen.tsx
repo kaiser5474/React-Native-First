@@ -1,23 +1,19 @@
 import React, { useState } from 'react';
-import { StyleSheet, ImageBackground } from 'react-native';
-import {useTailwind} from 'tailwind-rn';
+import { ScrollView } from 'react-native';
 
-import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import {
   ApolloClient,
   InMemoryCache,
-  ApolloProvider,
-  useQuery,
   gql
 } from "@apollo/client";
 import Card from '../components/Card';
+import {formatearFechaUS} from '../helpers/index';
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
 
   const [lista, setLista] = useState([]);
-  
-  const tailwind = useTailwind();
+
   const client = new ApolloClient({
     uri: "https://rickandmortyapi.com/graphql",
     cache: new InMemoryCache()
@@ -51,46 +47,12 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
   .then(result => setLista(result.data.characters.results));
 
   return (
-    <>
+    <ScrollView>
       {
         lista.map(item => 
-          <View style={styles.container2}>
-            <Card key={item.id} name={item.name} img={item.image} created={item.created}/>
-          </View>
+            <Card key={item.id} name={item.name} img={item.image} created={formatearFechaUS(item.created)}/>
         )
       }    
-    </>
+    </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container2:{
-    height: 220,
-  },
-  container: {
-    flex: 1,
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    color: '#fff',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-    alignItems: 'center'
-  },
-  image: {
-    flex: 1,
-    justifyContent: "center",
-    width: "100%",
-    textAlign: "center",
-  },
-  image2: {
-    flex: 1,
-    justifyContent: "center"
-  },
-});
