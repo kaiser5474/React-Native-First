@@ -7,9 +7,10 @@ const Card = ({name, img, created}) => {
     const tailwind = useTailwind();
   return (
     <ImageBackground source={require('../assets/images/splash.png')} resizeMode="cover" style={styles.image2}>
-    <View style={[styles.container, tailwind('rounded-md bg-violet-700')]}>      
-      <View style={tailwind('flex-row border-4 rounded-xl p-4 mr-2 ml-2 mt-2 border-purple-900 bg-violet-700')}>
-        <View style={tailwind('mr-4 bg-violet-700')}>
+    {/* <View style={[styles.container, tailwind('rounded-md bg-violet-700')]}>       */}
+    
+      <View style={tailwind('flex-row border-4 rounded-xl p-4 mr-2 ml-2 mt-2 border-purple-900 bg-violet-700')}>        
+        <View style={tailwind('mr-4 bg-violet-700 w-24')}>
           <Image 
             source = {{uri: img}}
             style = {styles.image}
@@ -20,13 +21,13 @@ const Card = ({name, img, created}) => {
           <View style={tailwind('bg-violet-700 flex flex-row')}>
             <Text style={tailwind('font-semibold text-xl mb-4 text-yellow-300 mr-2 font-bold')}>&#9733; &#9733; &#9733; &#9733; &#9734; </Text>
             <Text style={tailwind('font-semibold text-base mt-1 text-gray-300')}>9.3/10 </Text>
-            <Text style={tailwind('font-bold text-gray-300 text-right border-2 flex-1 content-start text-4xl mt-auto')}>&hellip;</Text>
+            <Text style={tailwind('font-bold text-gray-300 text-right flex-1 text-4xl inline-block align-top leading-[0rem]')}>&hellip;</Text>
           </View>
           <Text style={tailwind('font-bold text-xs mb-4 text-gray-300')}>"Amazing film from history perspective! Must have been in your playlist guys"</Text>
           <Text style={tailwind('font-semibold text-xs mb-4 text-right text-gray-300')}>{created}</Text>
         </View>
       </View>      
-    </View>
+    {/* </View> */}
     </ImageBackground>
   )
 }
@@ -47,4 +48,4 @@ const styles = StyleSheet.create({
     },
   });
 
-export default Card
+export default Card;

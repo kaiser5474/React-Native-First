@@ -55,7 +55,7 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
       {
         lista.map(item => 
           <View style={styles.container2}>
-            <Card name={item.name} img={item.image} key={item.id} created={item.created}/>
+            <Card key={item.id} name={item.name} img={item.image} created={item.created}/>
           </View>
         )
       }    
